@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 Oct, 2020 2:19:39 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="com.abc.Passport" table="PASSPORT">
+        <id name="pid" type="int">
+            <column name="PID" />
+            <generator class="increment" />
+        </id>
+        <property name="pnumber" type="java.lang.String">
+            <column name="PNUMBER" />
+        </property>
+        <one-to-one name="citizen" class="com.abc.Citizen" cascade="all"></one-to-one>
+    </class>
+</hibernate-mapping>
